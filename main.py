@@ -1,7 +1,7 @@
 
 
-def get_numbers_by_remainder(limit, remainder):
-    return [number for number in range(1, limit + 1) if number % 2 == remainder]
+def get_numbers(start, stop, step):
+    return list(range(start, stop, step))
 
 
 def get_sum(numbers):
@@ -41,8 +41,10 @@ def count_numbers():
     while number >= 0:
         number = get_number()
 
-        if number >= 0:
-            count += 1
+        if number < 0:
+            break
+
+        count += 1
 
     return count
 
@@ -51,12 +53,12 @@ def show_count_result(count):
     print("Количество введенных чисел:", count)
 
 
-even_numbers = get_numbers_by_remainder(100, 0)
+even_numbers = get_numbers(0, 101, 2)
 sum_even_numbers = get_sum(even_numbers)
 show_sum_result(sum_even_numbers)
 
 
-odd_numbers = get_numbers_by_remainder(10, 1)
+odd_numbers = get_numbers(1, 11, 2)
 squares_odd_numbers = get_squares(odd_numbers)
 show_squares_result(squares_odd_numbers)
 
